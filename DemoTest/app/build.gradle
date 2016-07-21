@@ -20,8 +20,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile files('libs/okhttputils-2_6_2.jar')
+    compile files('libs/okHttp/okhttputils-2_6_2.jar')
+    compile files('libs/annex/logutil-1.4.2.jar')
 }

@@ -12,21 +12,29 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.kuanglin.change.hellodemo.Custom.Public.SocketThread;
+
 import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity {
     ArrayList<Object> list =new ArrayList<>();
+    SocketThread tempSocket=new  SocketThread();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView mainList = (ListView) findViewById(R.id.mainListView);
+        TextView txt1 =(TextView)findViewById(R.id.Txt1);
 
         for (int i =0;i<10;i++){
             list.add("aafsd");
         }
         mainList.setAdapter(new MainAdapter());
+        System.out.println("Hello");
+//        SocketThread tempSocket =new  SocketThread();
+//        tempSocket.createThread("192.168.10.16",30006);
+        tempSocket.start();
     }
 
     @Override
